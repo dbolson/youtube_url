@@ -1,7 +1,6 @@
 require 'youtube_identifier/version'
+require 'youtube_identifier/invalid_url_error'
+require 'youtube_identifier/identifier'
 
 module YouTubeIdentifier
-  def self.id(url)
-    '7OLQnKr_sh8'
-  end
 end
