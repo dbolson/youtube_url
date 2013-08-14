@@ -1,4 +1,4 @@
-module YouTubeIdentifier
+module YouTubeURL
   class InvalidURLError < StandardError
     def initialize(message='Please make sure the URL is a valid YouTube URL')
       super(message)

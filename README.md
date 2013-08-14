@@ -1,6 +1,6 @@
-# YouTubeIdentifier
+# YouTubeURL
 
-YouTubeIdentifier provides information about any valid YouTube URL.
+YouTubeURL provides information about any valid YouTube URL.
 
 - It can figure out the video ID of a YouTube URL.
 - It can build a canonical YouTube URL based on any other YouTube URL or just the video ID.
@@ -9,7 +9,7 @@ YouTubeIdentifier provides information about any valid YouTube URL.
 
 Add this line to your application's Gemfile:
 
-    gem 'youtube_identifier'
+    gem 'youtube_url'
 
 And then execute:
 
@@ -17,19 +17,19 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install youtube_identifier
+    $ gem install youtube_url
 
 ## Usage
 
     url = 'www.youtube.com/watch?v=7OLQnKr_sh8'
-    YouTubeIdentifier::Identifier.new(url).valid? # => true
-    YouTubeIdentifier::Identifier.new(url).id # => '7OLQnKr_sh8'
-    YouTubeIdentifier::Identifier.new(url).canonical_url # => 'http://www.youtube.com/watch?v=7OLQnKr_sh8'
+    YouTubeURL::Identifier.new(url).valid? # => true
+    YouTubeURL::Identifier.new(url).id # => '7OLQnKr_sh8'
+    YouTubeURL::Identifier.new(url).canonical_url # => 'http://www.youtube.com/watch?v=7OLQnKr_sh8'
 
     url = 'http://google.com'
-    YouTubeIdentifier::Identifier.new(url).valid? # => false
-    YouTubeIdentifier::Identifier.new(url).id # => YouTubeIdentifier::InvalidURLError
-    YouTubeIdentifier::Identifier.new(url).canonical_url # => YouTubeIdentifier::InvalidURLError
+    YouTubeURL::Identifier.new(url).valid? # => false
+    YouTubeURL::Identifier.new(url).id # => YouTubeURL::InvalidURLError
+    YouTubeURL::Identifier.new(url).canonical_url # => YouTubeURL::InvalidURLError
 
 ## Contributing
 

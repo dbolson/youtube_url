@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'youtube_identifier/version'
+require 'youtube_url/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'youtube_identifier'
-  spec.version       = YouTubeIdentifier::VERSION
+  spec.name          = 'youtube_url'
+  spec.version       = YouTubeURL::VERSION
   spec.authors       = ['Danny Olson']
   spec.email         = ['danny@sharethrough.com']
-  spec.description   = %q{YouTubeIdentifier provides information about any valid YouTube URL.}
-  spec.summary       = %q{YouTubeIdentifier provides information about any valid YouTube URL.}
+  spec.description   = %q{YouTubeURL provides information about any valid YouTube URL.}
+  spec.summary       = %q{YouTubeURL provides information about any valid YouTube URL.}
 
-  spec.homepage      = 'https://github.com/sharethrough/youtube_identifier'
+  spec.homepage      = 'https://github.com/sharethrough/youtube_url'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)

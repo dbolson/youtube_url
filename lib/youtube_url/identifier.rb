@@ -1,4 +1,4 @@
-module YouTubeIdentifier
+module YouTubeURL
   class Identifier
     def initialize(url)
       @url = url

@@ -1,7 +1,7 @@
 require 'spec_helper'
-require 'youtube_identifier'
+require 'youtube_url'
 
-describe YouTubeIdentifier::Identifier do
+describe YouTubeURL::Identifier do
   def urls
     [
       'youtube.com/watch?v=7OLQnKr_sh8',
@@ -21,19 +21,19 @@ describe YouTubeIdentifier::Identifier do
   describe '#valid?' do
     context 'with a valid YouTube URL' do
       specify do
-        expect(YouTubeIdentifier::Identifier.new('http://youtube.com/watch?v=7OLQnKr_sh8')).to be_valid
+        expect(YouTubeURL::Identifier.new('http://youtube.com/watch?v=7OLQnKr_sh8')).to be_valid
       end
     end
 
     context 'with a YouTube URL without a video ID' do
       specify do
-        expect(YouTubeIdentifier::Identifier.new('http://youtube.com/watch')).to_not be_valid
+        expect(YouTubeURL::Identifier.new('http://youtube.com/watch')).to_not be_valid
       end
     end
 
     context 'with a non-YouTube URL' do
       specify do
-        expect(YouTubeIdentifier::Identifier.new('http://google.com')).to_not be_valid
+        expect(YouTubeURL::Identifier.new('http://google.com')).to_not be_valid
       end
     end
   end
@@ -44,7 +44,7 @@ describe YouTubeIdentifier::Identifier do
         video_id = '7OLQnKr_sh8'
 
         urls.each do |url|
-          expect(YouTubeIdentifier::Identifier.new(url).id).to eq(video_id)
+          expect(YouTubeURL::Identifier.new(url).id).to eq(video_id)
         end
       end
     end
@@ -60,7 +60,7 @@ describe YouTubeIdentifier::Identifier do
         canonical_url = 'http://www.youtube.com/watch?v=7OLQnKr_sh8'
 
         urls.each do |url|
-          expect(YouTubeIdentifier::Identifier.new(url).canonical_url).to eq(canonical_url)
+          expect(YouTubeURL::Identifier.new(url).canonical_url).to eq(canonical_url)
         end
       end
     end
