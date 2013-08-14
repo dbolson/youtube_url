@@ -16,6 +16,10 @@ module YouTubeIdentifier
       end
     end
 
+    def canonical_url
+      "http://www.youtube.com/watch?v=#{id}"
+    end
+
     private
 
     attr_reader :url
