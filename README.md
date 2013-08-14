@@ -21,6 +21,16 @@ Or install it yourself as:
 
 ## Usage
 
+    url = 'www.youtube.com/watch?v=7OLQnKr_sh8'
+    YouTubeIdentifier::Identifier.new(url).valid? # => true
+    YouTubeIdentifier::Identifier.new(url).id # => '7OLQnKr_sh8'
+    YouTubeIdentifier::Identifier.new(url).canonical_url # => 'http://www.youtube.com/watch?v=7OLQnKr_sh8'
+
+    url = 'http://google.com'
+    YouTubeIdentifier::Identifier.new(url).valid? # => false
+    YouTubeIdentifier::Identifier.new(url).id # => YouTubeIdentifier::InvalidURLError
+    YouTubeIdentifier::Identifier.new(url).canonical_url # => YouTubeIdentifier::InvalidURLError
+
 ## Contributing
 
 1. Fork it

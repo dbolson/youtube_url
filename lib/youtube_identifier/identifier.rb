@@ -5,7 +5,7 @@ module YouTubeIdentifier
     end
 
     def valid?
-      url_regexp.match(url)
+      !url_regexp.match(url).nil?
     end
 
     def id
